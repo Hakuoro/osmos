@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Loredal</title>
+</head>
+<body>
+<script src="http://loredal.ru:3003/socket.io/socket.io.js"></script>
+<script>
+
+    var hostname = 'http://loredal.ru:3003';
+
+    var connect = function () {
+        socket = io.connect(hostname);
+
+        setRequestListeners(socket);
+        setResponseListeners(socket);
+    };
+
+    var setRequestListeners = function (socket) {
+
+
+    };
+
+    var setResponseListeners = function (socket) {
+
+        socket.on('connect', function () {
+
+            var data = {};
+
+            socket.emit("init", data);
+
+        });
+
+        socket.on('initDone', function (data) {
+            console.log(data);
+        });
+
+
+    };
+
+    connect();
+</script>
+
+</body>
+</html>
