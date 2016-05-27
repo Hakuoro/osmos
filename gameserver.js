@@ -21,14 +21,11 @@ var GameServer = Backbone.Model.extend({
                 console.log(data);
             });*/
 
-
-
         });
 
     },
 
     handleConnection: function (socket) {
-
 
         var self = this;
 
